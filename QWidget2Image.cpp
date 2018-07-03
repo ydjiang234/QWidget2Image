@@ -20,10 +20,11 @@ bool QWidget2Image::saveSvg(QWidget *w, QString path)
     return w2v->save(w, path);
 }
 
-bool QWidget2Image::saveImage(QWidget *w, QString path, QSize size, const char *format, int dpi, Qt::GlobalColor color)
+bool QWidget2Image::saveImage(QWidget *w, QString path, const char *format, int dpi, Qt::GlobalColor color)
 {
     QWidget2Svg *w2v = new QWidget2Svg();
     Svg2Image *s2i = new Svg2Image();
     QByteArray array = w2v->getBytes(w);
+    QSize size = QSize(w->widthMM(), w->heightMM());
     return s2i->save(array, path, size, format, dpi, color);
 }

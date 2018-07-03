@@ -13,7 +13,7 @@ public:
 
     bool savePdf(QWidget *w, QString path);
     bool saveSvg(QWidget *w, QString path);
-    bool saveImage(QWidget *w, QString path, QSize size, const char* format="jpg", int dpi=300, Qt::GlobalColor color=Qt::GlobalColor::white);
+    bool saveImage(QWidget *w, QString, const char* format="jpg", int dpi=300, Qt::GlobalColor color=Qt::GlobalColor::white);
 };
 
 #endif // QWIDGET2IMAGE_H
